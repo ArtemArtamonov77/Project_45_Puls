@@ -1,0 +1,13 @@
+@import 'base/variables';
+@import 'blocks/promo'; /* блоки сайта по БЭМ, блок промо */
+@import 'blocks/header';
+@import 'blocks/buttons';
+* {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    border: 1px solid red;
+}
+/* строим без boostrap, только flex вёрсткой */
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+}
