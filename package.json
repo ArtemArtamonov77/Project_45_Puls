@@ -1,5 +1,5 @@
 {
-  "name": "43_uber_gulp",
+  "name": "9_Project_45_Puls_BAM_Gulp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -18,5 +18,11 @@
   },
   "dependencies": {
     "gulp-autoprefixer": "^7.0.1"
-  }
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ] 
 }
