@@ -79,7 +79,7 @@
     }
     .advantages {
         padding-top: 25px;
-        &__header {
+        .title {
             font-size: 26px;
         }
         &__block {
@@ -149,7 +149,7 @@
         /* .container {
             width: 90%;
         } */
-        &__header {
+        .title {
             font-size: 23px;
         }
         &__wrapper {
