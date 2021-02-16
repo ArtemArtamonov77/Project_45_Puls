@@ -217,7 +217,8 @@
     .promo .container {
       width: 290px; }
     .promo__header {
-      font-size: 28px; }
+      font-size: 28px;
+      text-align: right; }
     .promo__subheader {
       font-size: 15px; }
     .promo__icon {
@@ -225,14 +226,18 @@
     .promo__icons {
       width: 285px; }
     .promo__wrapper {
-      margin-top: 65px; }
+      margin-top: 80px;
+      text-align: right; }
     .promo .button_main {
-      margin-top: 40px; }
+      margin-top: 65px;
+      width: 200px;
+      font-size: 12px; }
     .promo__link {
       font-size: 12px; }
   .header__phone {
     font-size: 14px; }
   .header .button {
-    width: 122px; }
+    width: 122px;
+    font-size: 9px; }
   .header__official {
     display: none; } }
