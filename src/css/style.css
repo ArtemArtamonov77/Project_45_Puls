@@ -12,7 +12,7 @@
 .promo {
   min-height: 650px;
   padding: 21px 0 93px 0;
-  background: url(../../img/main.jpg) center center/cover no-repeat; }
+  background: url(../img/main.jpg) center center/cover no-repeat; }
   .promo__wrapper {
     display: flex;
     flex-direction: column;
@@ -145,7 +145,7 @@
 /* последним поддтягиваем media потому как иначе будет сначало читать медиа а потом уже основной код */
 @media (max-width: 991px) {
   .promo {
-    background: url(../../img/main.jpg) no-repeat;
+    background: url(../img/main.jpg) no-repeat;
     min-height: min-content;
     padding-bottom: 50px; }
     .promo .container {
@@ -213,7 +213,7 @@
 
 @media (max-width: 575px) {
   .promo {
-    background: url(../../img/main.jpg) center center/cover no-repeat;
+    background: url(../img/main.jpg) center center/cover no-repeat;
     background-position-x: 14%;
     /* .container {
             width: 90%;
