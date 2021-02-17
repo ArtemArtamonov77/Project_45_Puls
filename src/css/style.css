@@ -181,6 +181,14 @@
       margin-bottom: 20px;
       /* отступ между третьим инпутом и кнопкой */ }
 
+.carousel {
+  padding: 81px 0;
+  width: 750px;
+  margin: 0 auto; }
+  .carousel .slick-prev img {
+    width: 31px;
+    height: 50px; }
+
 /* последним поддтягиваем media потому как иначе будет сначало читать медиа а потом уже основной код */
 @media (max-width: 991px) {
   .container {
