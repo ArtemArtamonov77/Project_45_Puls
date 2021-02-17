@@ -5,13 +5,13 @@
 
 }
 @media (max-width:991px) {
+    .container {
+        max-width: 90%;
+    }
     .promo {
         background: url(../img/main.jpg) no-repeat;
         min-height: min-content;
         padding-bottom: 50px;
-        .container {
-            max-width: 90%;
-        }
     }
     .advantages {
         padding-top: 40px;
@@ -24,13 +24,11 @@
         }
     }
     
+    
 }
 @media (max-width:767px) {
     .promo {
         padding-bottom: 50px;
-        /* .container {
-            max-width: 515px;
-        } */
         &__header {
             font-size: 38px;
         }
@@ -98,14 +96,26 @@
             }
         }
     }
+    .consultation {
+        &__descr {
+            font-size: 18px;
+        }
+        .title_left {
+            font-size: 34px;
+            br {
+                display:none;
+            }
+        }
+        
+    }
 }
 @media (max-width:575px) {
+    .title {
+        font-size: 23px;
+    }
     .promo {
         background: url(../img/main.jpg) center (center/cover) no-repeat;
         background-position-x: 14%;
-        /* .container {
-            width: 90%;
-        } */
         &__header {
             font-size: 28px;
             text-align: right;
@@ -145,10 +155,7 @@
         }
     }
     .advantages {
-        padding-top: 25px;
-        /* .container {
-            width: 90%;
-        } */
+        padding: 25px 0;
         .title {
             font-size: 23px;
         }
@@ -157,6 +164,26 @@
         }
         &__block {
             margin: 15px auto;
+        }
+    }
+    .consultation {
+        padding: 30px 0;
+        min-height: 567px;
+        .title_left {
+            font-size: 23px;
+        }
+        &__descr {
+            font-size: 14px;
+        }
+        .feed-form {
+            width: 287px;
+            input {
+                height: 40px;
+            }
+            .button_submit {
+                height: 40px;
+                font-size: 14px;
+            }
         }
     }
 }
