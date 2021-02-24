@@ -112,6 +112,10 @@
     width: 100%;
     height: 55px;
     font-size: 16px; }
+  .button_mini {
+    width: 131px;
+    height: 40px;
+    font-size: 14px; }
 
 .advantages {
   padding: 69px 0 78px;
@@ -242,19 +246,28 @@
       background-color: #c70101;
       border: none; }
   .catalog__content {
-    margin-top: 60px; }
+    margin-top: 60px;
+    display: none;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* для того что-бы не помещающиеся блоки перемещались вниз */ }
+    .catalog__content_active {
+      display: flex; }
   .catalog-item {
     width: 300px;
     min-height: 440px;
     /* мин для того что если описание увеличится то карточка станет выше */
     border: 2px solid #e8e8e8;
-    padding: 20px 20px 26px 20px; }
+    padding: 20px 20px 26px 20px;
+    overflow: hidden;
+    /* скрывает всё, что выходит за границы блочного элемента */
+    margin-bottom: 20px; }
     .catalog-item__img {
       display: block;
       margin: 0 auto;
       max-width: 100%;
       /* если в будущем будет менятся картинка и она будет шире чем 300px , то она сожмется до 300 */
-      height: 140px; }
+      height: 200px; }
     .catalog-item__subtitle {
       margin-top: 20px;
       font-size: 16px;
@@ -276,9 +289,91 @@
       line-height: 1.2;
       font-weight: 500;
       text-decoration: underline;
+      text-transform: uppercase;
       color: #c70101;
       text-align: center; }
       .catalog-item__link:hover {
+        color: #c70101; }
+    .catalog-item hr {
+      background-color: #e8e8e8;
+      margin-top: 19px;
+      margin-bottom: 21px;
+      border-bottom: none;
+      /* т.к. полоса образуется двумя границами hr, а нам надо толщину линии в 1px то просто убираем одну границу */ }
+    .catalog-item__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+    .catalog-item__old-price {
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 300;
+      color: #555555;
+      text-decoration: line-through;
+      /* перечеркнутый текст */ }
+    .catalog-item__price {
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 700;
+      color: #050505; }
+    .catalog-item__wrapper {
+      display: flex;
+      width: calc(200% + 40px);
+      /* для задания ширины блока в 200% от родителя + 40px */ }
+    .catalog-item__content {
+      width: 50%;
+      margin-right: 0px;
+      transform: translateX(-100%);
+      /* изначально контент установлен в левой части wrapper */
+      transition: 0.5s all; }
+      .catalog-item__content_active {
+        transform: translateX(0%);
+        /* в состоянии active он смещается вправо на 100% */
+        margin-right: 20px; }
+    .catalog-item__list {
+      position: relative;
+      /* для красных квадрантиков в списке */
+      width: 50%;
+      margin-left: 0px;
+      transform: translateX(0%);
+      padding-right: 20px;
+      transition: 0.5s all;
+      padding-left: 19px;
+      margin-bottom: 0;
+      list-style-type: none; }
+      .catalog-item__list_active {
+        transform: translateX(-100%); }
+      .catalog-item__list li {
+        position: relative;
+        /* для красных квадрантиков в списке */
+        font-size: 14px;
+        line-height: 1.2;
+        font-weight: 300;
+        color: #555555;
+        margin-bottom: 20px;
+        /* создаем маркеры в листе - красные квадратики, с помощью псевдоклассов */ }
+        .catalog-item__list li::before {
+          content: '';
+          position: absolute;
+          width: 5px;
+          height: 5px;
+          background-color: #c70101;
+          left: -14px;
+          top: 6px; }
+    .catalog-item__back {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(calc(-50% - 19px));
+      display: block;
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 500;
+      text-decoration: underline;
+      text-transform: uppercase;
+      color: #c70101;
+      text-align: center; }
+      .catalog-item__back:hover {
         color: #c70101; }
 
 /* последним поддтягиваем media потому как иначе будет сначало читать медиа а потом уже основной код */
