@@ -377,6 +377,12 @@
         color: #c70101; }
 
 /* последним поддтягиваем media потому как иначе будет сначало читать медиа а потом уже основной код */
+@media (max-width: 1200px) {
+  .carousel .container {
+    max-width: 820px; }
+  .carousel .tns-item img {
+    width: 100%; } }
+
 @media (max-width: 991px) {
   .container {
     max-width: 90%; }
@@ -390,7 +396,11 @@
       max-width: 90%; }
     .advantages__block {
       width: 220px;
-      margin-top: 40px; } }
+      margin-top: 40px; }
+  .carousel .container {
+    max-width: 650px; }
+  .catalog .container {
+    max-width: 620px; } }
 
 @media (max-width: 767px) {
   .promo {
@@ -446,7 +456,13 @@
   .consultation .title_left {
     font-size: 34px; }
     .consultation .title_left br {
-      display: none; } }
+      display: none; }
+  .carousel .container {
+    max-width: 425px; }
+  .carousel .next img, .carousel .prev img {
+    width: 25px; }
+  .catalog .container {
+    max-width: 300px; } }
 
 @media (max-width: 575px) {
   .title {
@@ -500,4 +516,12 @@
         height: 40px; }
       .consultation .feed-form .button_submit {
         height: 40px;
-        font-size: 14px; } }
+        font-size: 14px; }
+  .carousel .container {
+    max-width: 240px; }
+  .carousel .next img, .carousel .prev img {
+    width: 15px; }
+  .carousel .next {
+    right: -33px; }
+  .carousel .prev {
+    left: -33px; } }

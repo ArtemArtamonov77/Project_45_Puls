@@ -24,6 +24,20 @@ const slider = tns({
     autoplay: false,
     controls: false,
     nav: false,
+    /* responsive: {
+      640: {
+        edgePadding: 20,
+        gutter: 20,
+        items: 1
+      },
+      700: {
+        gutter: 30
+      },
+      900: {
+        items: 1,
+        fixedWidth: 1000
+      }
+    }, */
     controlsText: [
         '<img src="icons/left.svg">',
         '<img src="icons/right.svg">'
