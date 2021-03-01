@@ -136,7 +136,14 @@
     }
     .catalog {
         .container {
-            max-width: 300px;
+            max-width: 515px;
+        }
+        &__content {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__tab {
+            font-size: 16px;
         }
     }
 }
@@ -229,6 +236,29 @@
         }
         .prev {
             left: -33px;
+        }
+    }
+    .catalog {
+        .title {
+            font-size: 20px;
+        }
+        .container {
+            max-width: 270px;
+        }
+        &__content {
+            flex-wrap: nowrap;
+            margin-top: 35px;
+        }
+        &__tab {
+            height: 37px;
+            font-size: 10px;
+            line-height: 17px;
+            br {
+                display: inherit;
+            }
+        }
+        &__tabs {
+            margin-top: 30px;
         }
     }
 }
