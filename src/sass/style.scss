@@ -10,6 +10,12 @@
     max-width: 950px;
     margin: 0 auto;
 }
+hr {
+    margin-top: 19px;
+    margin-bottom: 21px;
+    border: 1px solid #e8e8e8;
+    border-top: none; /* т.к. полоса образуется двумя границами hr, а нам надо толщину линии в 1px то просто убираем одну границу */
+}
 /* импорты поддягиваем внизу кода */
 @import 'base/variables';
 @import 'blocks/promo'; /* блоки сайта по БЭМ, блок промо */
@@ -21,6 +27,7 @@
 @import 'blocks/forms';
 @import 'blocks/carousel';
 @import 'blocks/catalog';
+@import 'blocks/reviews';
 
 
 /* последним поддтягиваем media потому как иначе будет сначало читать медиа а потом уже основной код */

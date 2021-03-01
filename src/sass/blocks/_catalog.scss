@@ -93,12 +93,7 @@
                 color: $main-color;
             }
         }
-        hr {
-            background-color: #e8e8e8;
-            margin-top: 19px;
-            margin-bottom: 21px;
-            border-bottom: none; /* т.к. полоса образуется двумя границами hr, а нам надо толщину линии в 1px то просто убираем одну границу */
-        }
+        
         &__footer {
             display: flex;
             justify-content: space-between;
