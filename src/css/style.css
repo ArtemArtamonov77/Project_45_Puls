@@ -530,11 +530,9 @@
   .carousel .next img, .carousel .prev img {
     width: 15px; }
   .carousel .next {
-    right: -33px;
-    z-index: 1; }
+    right: -40px; }
   .carousel .prev {
-    left: -33px;
-    z-index: 1; }
+    left: -40px; }
   .catalog .title {
     font-size: 20px; }
   .catalog .container {
