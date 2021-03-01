@@ -233,9 +233,11 @@
         }
         .next {
             right: -33px;
+            z-index: 1;
         }
         .prev {
             left: -33px;
+            z-index: 1;
         }
     }
     .catalog {
