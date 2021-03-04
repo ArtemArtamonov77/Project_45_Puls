@@ -18,6 +18,7 @@ hr {
 }
 /* импорты поддягиваем внизу кода */
 @import 'base/variables';
+@import 'base/mixins';
 @import 'blocks/promo'; /* блоки сайта по БЭМ, блок промо */
 @import 'blocks/header';
 @import 'blocks/buttons';
@@ -28,6 +29,7 @@ hr {
 @import 'blocks/carousel';
 @import 'blocks/catalog';
 @import 'blocks/reviews';
+@import 'blocks/footer';
 
 
 /* последним поддтягиваем media потому как иначе будет сначало читать медиа а потом уже основной код */
