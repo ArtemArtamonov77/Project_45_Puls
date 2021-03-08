@@ -1,4 +1,13 @@
-/* Slick слайдер */
+/* $(document).ready(function() - все скрипты будут выполняться только когда будет загружена вся страница в браузер со всеми элементами и т.п. */
+$(document).ready(function(){
+    
+  $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
+    $(this)
+      .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
+      .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
+
+  });
+  /* Slick слайдер */
 
 /* $(document).ready(function(){
     $('.carousel__inner').slick({
@@ -43,11 +52,11 @@ const slider = tns({
         '<img src="icons/right.svg">'
     ]
   });
-document.querySelector('.prev').addEventListener('click', function () {
-    slider.goTo('prev');
-  });
-document.querySelector('.next').addEventListener('click', function () {
-    slider.goTo('next');
+  document.querySelector('.prev').addEventListener('click', function () {
+      slider.goTo('prev');
+    });
+  document.querySelector('.next').addEventListener('click', function () {
+      slider.goTo('next');
   });
 /* скрипт работы табов */
 /* $(document).ready(function(){
@@ -57,13 +66,6 @@ document.querySelector('.next').addEventListener('click', function () {
       .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
   }
 }; */
-$(document).ready(function(){
-    
-    $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
-      $(this)
-        .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
-        .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
-    });
 /* для ссылки "ПОДРОБНЕЕ" */
 /*   $('.catalog-item__link').each(function(i) {
     $(this).on('click', function(e) {
@@ -92,5 +94,50 @@ $(document).ready(function(){
   };
   toggleSlide('.catalog-item__link');/* для ссылки "ПОДРОБНЕЕ" */
   toggleSlide('.catalog-item__back');/* для ссылки "НАЗАД" */
+  // Модальные окна
+  /* $('[data-modal=consultation]').fadeOut(); *//*fadeOut() - команда jqwery которая красиво скрывает какие либо элементы  */
+  $('[data-modal=consultation]').on('click', function(){
+    $('.overlay, #consultation').fadeIn('slow');/* показываем оверлей и модальное окно*/
   });
- 
+  $('.modal__close').on('click', function(){
+    $('.overlay, #consultation, #thanks, #order').fadeOut('slow');/*по нажатию на крестик скрываем оверлей и модальные окна*/
+  });
+
+  /* Скрипт замены modal_descr описания модального окна в зависимости от выбранной карточки */
+  /* each - перебор кнопок */
+  $('.button_mini').each(function(i) {
+    $(this).on('click', function() {
+      $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+      $('.overlay, #order').fadeIn('slow');/*открываем модальное окно по нажатию кнопки в карточках каталога */
+    })
+  });
+  /* Валидация форм https://jqueryvalidation.org/ */
+
+
+  function validateForms(form){
+    $(form).validate({
+      rules: { 
+        name: "required",
+        phone: "required",
+        email: {
+          required: true,
+          email: true
+        }
+      },
+      messages: {
+        name: "Пожалуйста введите своё имя",
+        phone: "Пожалуйста введите свой номер телефона",
+        email: {
+          required: "Пожалуйста введите свой почтовый адрес",
+          email: "Неправильно введён адрес почты"
+        }
+      }
+    });
+  };
+
+  validateForms('#consultation-form');
+  validateForms('#consultation form');
+  validateForms('#order form');
+});
+
+

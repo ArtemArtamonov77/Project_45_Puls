@@ -30,6 +30,7 @@ hr {
 @import 'blocks/catalog';
 @import 'blocks/reviews';
 @import 'blocks/footer';
+@import 'blocks/modal';
 
 
 /* последним поддтягиваем media потому как иначе будет сначало читать медиа а потом уже основной код */

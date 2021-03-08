@@ -179,12 +179,20 @@ hr {
     line-height: 1.2;
     font-weight: 500;
     color: #ffffff; }
+  .consultation .error {
+    border: 1px solid red; }
+  .consultation label.error {
+    color: #ffffff;
+    border: none;
+    text-align: center;
+    margin-bottom: 15px; }
 
 .feed-form {
   margin-top: 36px;
   display: flex;
   flex-direction: column;
-  width: 300px; }
+  width: 300px;
+  /* для модального окна */ }
   .feed-form input {
     height: 50px;
     background-color: #ffffff;
@@ -198,6 +206,8 @@ hr {
     .feed-form input:nth-child(3) {
       margin-bottom: 20px;
       /* отступ между третьим инпутом и кнопкой */ }
+  .feed-form_mt25 {
+    margin-top: 25px; }
 
 .carousel {
   padding: 81px 0; }
@@ -460,6 +470,59 @@ hr {
     justify-content: center;
     align-items: center; }
 
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.56);
+  /* задали прозрачность подложки не затрагивая форму ввода */ }
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  min-height: 400px;
+  /* если между полями ввода будут появляться предупреждающие надписи, то окно будет немного расширяться */
+  background-color: #f2f2f2;
+  padding: 38px 40px 40px 40px;
+  /* крестик */
+  /* стиль сообщений об шибках  */ }
+  .modal__close {
+    position: absolute;
+    top: 0;
+    right: -40px;
+    font-size: 41px;
+    line-height: 21px;
+    color: #c70101;
+    cursor: pointer; }
+  .modal__subtitle {
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 700;
+    color: #0d0d0d;
+    text-align: center; }
+  .modal__descr {
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: #0d0d0d;
+    text-align: center; }
+  .modal_mini {
+    min-height: 140px; }
+  .modal .error {
+    border: 1px solid red; }
+  .modal label.error {
+    border: none;
+    text-align: center;
+    margin-bottom: 15px; }
+
+#consultation, #order, #thanks {
+  display: none; }
+
 /* последним поддтягиваем media потому как иначе будет сначало читать медиа а потом уже основной код */
 @media (max-width: 1200px) {
   .carousel .container {
@@ -661,4 +724,18 @@ hr {
     font-size: 17px; }
   .footer__social-item {
     width: 42px;
-    height: 42px; } }
+    height: 42px; }
+  .overlay .modal {
+    width: 280px;
+    min-height: 370px; }
+    .overlay .modal__close {
+      right: 5px;
+      font-size: 35px;
+      line-height: 30px; }
+  .overlay .feed-form {
+    width: 215px; }
+    .overlay .feed-form input {
+      height: 40px; }
+    .overlay .feed-form .button_submit {
+      height: 40px;
+      margin-top: 10px; } }

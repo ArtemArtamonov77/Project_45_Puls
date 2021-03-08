@@ -309,4 +309,26 @@
             height: 42px;
         }
     }
+    .overlay {
+        .modal {
+            width: 280px;
+            min-height: 370px;
+            &__close {
+                right: 5px;
+                font-size: 35px;
+                line-height: 30px;
+            }
+        }
+        .feed-form {
+            width: 215px;
+            input {
+                height: 40px;
+            }
+            .button_submit {
+                height: 40px;
+                margin-top: 10px;
+            }
+        }
+        
+    }
 }
