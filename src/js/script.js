@@ -140,6 +140,22 @@ const slider = tns({
   validateForms('#order form');
 
   $('input[name=phone]').mask("+7 (999) 999-99-99") /* Маска ввода */
+
+  /* Работа форм e - ивент, prevenrDefault отменяем действие браузера по умолчанию - после нажатия на отправку  страница перезагружается, теперь не будет перезагружаться */
+  $('form').submit(function(e) {
+    e.preventDefault();
+    $.ajax({
+      type: "POST", /* post тип отправка */
+      url: "mailer/smart.php",
+      data: $(this).serialize()
+    }).done(function() {
+      $(this).find("input").val("");/*очистит инпуты после отправки */
+
+      
+      $('form').trigger('reset'); /* форма очистится  */
+    });
+    return false;
+  });
 });
 
 
