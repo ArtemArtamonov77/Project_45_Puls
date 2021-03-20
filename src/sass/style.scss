@@ -1,4 +1,6 @@
-
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/animation';
 
 * {
     font-family: 'Museo Sans Cyrl', sans-serif;
@@ -16,9 +18,8 @@ hr {
     border: 1px solid #e8e8e8;
     border-top: none; /* т.к. полоса образуется двумя границами hr, а нам надо толщину линии в 1px то просто убираем одну границу */
 }
-/* импорты поддягиваем внизу кода */
-@import 'base/variables';
-@import 'base/mixins';
+/* импорты блоков поддягиваем внизу кода */
+
 @import 'blocks/promo'; /* блоки сайта по БЭМ, блок промо */
 @import 'blocks/header';
 @import 'blocks/buttons';
@@ -31,7 +32,7 @@ hr {
 @import 'blocks/reviews';
 @import 'blocks/footer';
 @import 'blocks/modal';
-
+@import 'blocks/pageup';
 
 /* последним поддтягиваем media потому как иначе будет сначало читать медиа а потом уже основной код */
 @import 'base/media';

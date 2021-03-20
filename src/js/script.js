@@ -94,6 +94,7 @@ const slider = tns({
   };
   toggleSlide('.catalog-item__link');/* для ссылки "ПОДРОБНЕЕ" */
   toggleSlide('.catalog-item__back');/* для ссылки "НАЗАД" */
+  
   // Модальные окна
   /* $('[data-modal=consultation]').fadeOut(); *//*fadeOut() - команда jqwery которая красиво скрывает какие либо элементы  */
   $('[data-modal=consultation]').on('click', function(){
@@ -150,12 +151,29 @@ const slider = tns({
       data: $(this).serialize()
     }).done(function() {
       $(this).find("input").val("");/*очистит инпуты после отправки */
-
-      
+      $('#consultation, #order').fadeOut();/* после отправки закроет модальное окно */
+      $('.overlay, #thanks').fadeIn('slow');/* после отправки откроет оверлей и окно thanks */
       $('form').trigger('reset'); /* форма очистится  */
     });
     return false;
   });
+
+  // работа стрелки возврата в начало сайта, плавность
+  $(window).scroll(function() {
+    if ($(this).scrollTop()>1600) {
+        $('.pageup').fadeIn();
+    } else {
+      $('.pageup').fadeOut();
+    }
+  });
+  /* плавный скролл по нажатию стрелки вверх (также на jquery) */
+  $("a[href^='#']").click(function(){
+    const _href = $(this).attr("href");
+    $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+    return false;
+  });
+  /* анимация WOW блока отзывы */
+  new WOW().init();
 });
 
 

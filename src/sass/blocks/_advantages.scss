@@ -32,4 +32,18 @@
             color: #ff0000;
         }
     }
+    &__icon {
+        &_animated {
+            animation-name: heartbeat;
+            /* время анимации */
+            /* animation-duration: 1.3s; */
+            /* animation-timing-function: ease; *//* Временная функция */
+            /* animation-iteration-count: infinite; */ /* Повтор анимации - бесконечно */
+            &:hover {
+                animation-play-state: paused;
+            }
+            /* все свойства анимации можно записать кратко в одну строчку */
+            animation: heartbeat 1.3s ease infinite;
+        }
+    }
 }

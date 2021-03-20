@@ -1,4 +1,18 @@
 @charset "UTF-8";
+/* Анимации CSS3 без js */
+/* Аниминуем иконку сердца в блоке Наши преимущества */
+/*  */
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    /* от маштаба 100% */ }
+  50% {
+    transform: scale(1.4);
+    /*на 50% самой анимации сердце увеличевается на 100+40 */ }
+  to {
+    transform: scale(1);
+    /*в конце анимации возвращается к 100% */ } }
+
 * {
   font-family: 'Museo Sans Cyrl', sans-serif;
   /* border: 1px solid red; */ }
@@ -17,7 +31,7 @@ hr {
   border-top: none;
   /* т.к. полоса образуется двумя границами hr, а нам надо толщину линии в 1px то просто убираем одну границу */ }
 
-/* импорты поддягиваем внизу кода */
+/* импорты блоков поддягиваем внизу кода */
 .promo {
   min-height: 650px;
   padding: 21px 0 93px 0;
@@ -157,6 +171,18 @@ hr {
     .advantages__text-block a {
       text-decoration: underline;
       color: #ff0000; }
+  .advantages__icon_animated {
+    animation-name: heartbeat;
+    /* время анимации */
+    /* animation-duration: 1.3s; */
+    /* animation-timing-function: ease; */
+    /* Временная функция */
+    /* animation-iteration-count: infinite; */
+    /* Повтор анимации - бесконечно */
+    /* все свойства анимации можно записать кратко в одну строчку */
+    animation: heartbeat 1.3s ease infinite; }
+    .advantages__icon_animated:hover {
+      animation-play-state: paused; }
 
 .title {
   font-size: 30px;
@@ -522,6 +548,17 @@ hr {
 
 #consultation, #order, #thanks {
   display: none; }
+
+.pageup {
+  display: none;
+  /* как страница отматается на 1600 пикселей вниз - стрелка появится, настроено в скрипте */
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 40px;
+  height: 40px; }
+  .pageup img {
+    width: 100%; }
 
 /* последним поддтягиваем media потому как иначе будет сначало читать медиа а потом уже основной код */
 @media (max-width: 1200px) {
