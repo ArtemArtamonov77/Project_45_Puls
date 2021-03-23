@@ -145,7 +145,8 @@ hr {
 
 .advantages {
   padding: 69px 0 78px;
-  background-color: #f6f5f5; }
+  background-color: #f6f5f5;
+  /* способ анимации вручную */ }
   .advantages__wrapper {
     display: flex;
     justify-content: space-between; }
